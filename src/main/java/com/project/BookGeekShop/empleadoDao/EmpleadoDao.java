@@ -1,13 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
- */
 package com.project.BookGeekShop.empleadoDao;
 
-/**
- *
- * @author adrix
- */
-public interface EmpleadoDao {
+import com.project.BookGeekShop.empleadoDomain.Empleado;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface EmpleadoDao 
+        extends JpaRepository<Empleado,Long> {
     
 }

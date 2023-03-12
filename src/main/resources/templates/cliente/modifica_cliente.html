@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>BookGeekShop</title>
+        <meta charset="UTF-8"/>
+    </head>
+    <body>
+        <!--        <header th:replace="layout/plantilla :: header"/>-->
+        <header>        
+            <h2>Datos de Cliente</h2>
+            <hr>
+        </header>
+        <a th:href="@{/cliente/listado_cliente}">Regresar</a>
+        <hr>
+        <form th:action="@{/cliente/guardar}" 
+              method="post"
+              th:object="${cliente}">
+            <input type="hidden" name="idCliente" 
+                   th:field="*{idCliente}"/>
+            <label>Nombre</label>
+            <input type="text"
+                   name="nombre"
+                   required="true"
+                   th:field="*{nombre}"/>
+            <br>
+            <label>PrimerApellido</label>
+            <input type="text"
+                   name="primerApellido"
+                   th:field="*{primerApellido}"/>
+            <br>
+            <br>
+            <label>SegundoApellido</label>
+            <input type="text"
+                   name="segundoApellido"
+                   th:field="*{segundoApellido}"/>
+            <br>
+            <label>Correo</label>
+            <input type="email"
+                   name="correo"
+                   required="true"
+                   th:field="*{correo}"/>
+            <br>
+            <label>Telefono</label>
+            <input type="tel"
+                   name="telefono"
+                   th:field="*{telefono}"/>
+            <br>
+            <hr>
+            <input type="submit" value="Guardar" />
+            <hr>
+        </form>
+        <!--        <footer th:replace="layout/plantilla :: footer" />-->
+    </body>
+</html>
+
+

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <header>
+            <h2>Listado de Empleados</h2>
+            <br>
+            <a th:href="@{/}">Regresar a Home</a>
+            <hr>
+        </header>
+        <a th:href="@{/empleado/nuevo}">Nuevo Empleado</a>
+        <div th:if="${empleados != null and !empleados.empty}">
+            <table border="0">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>PrimerApellido</th>
+                        <th>SegundoApellido</th>
+                        <th>Correo</th>
+                        <th>Telefono</th>
+                        <th>Puesto</th>
+                        <th>Antiguedad</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="empleado: ${empleados}">
+                        <td>[[${empleado.nombre}]]</td>
+                        <td>[[${empleado.primerApellido}]]</td>
+                        <td>[[${empleado.segundoApellido}]]</td>
+                        <td>[[${empleado.correo}]]</td>
+                        <td>[[${empleado.telefono}]]</td>
+                        <td>[[${empleado.puesto}]]</td>
+                        <td>[[${empleado.antiguedad}]]</td>
+                        <td>
+                            <a th:href="@{/empleado/eliminar/} + ${empleado.idEmpleado}">Eliminar</a>
+                            <a th:href="@{/empleado/modificar/} + ${empleado.idEmpleado}">Modificar</a>
+                        </td>    
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <br>
+        <div th:if="${empleados == null or empleados.empty}">
+            <h2>No tenemos empleados que mostrar</h2>
+        </div> 
+    </body>
+</html>

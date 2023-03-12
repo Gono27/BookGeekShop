@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>BookGeekShop</title>
+        <meta charset="UTF-8"/>
+    </head>
+    <body>
+        <!--        <header th:replace="layout/plantilla :: header"/>-->
+        <header>        
+            <h2>Datos de Empleado</h2>
+            <hr>
+        </header>
+        <a th:href="@{/empleado/listado_empleado}">Regresar</a>
+        <hr>
+        <form th:action="@{/empleado/guardar}" 
+              method="post"
+              th:object="${empleado}">
+            <input type="hidden" name="idEmpleado" 
+                   th:field="*{idEmpleado}"/>
+            <label>Nombre</label>
+            <input type="text"
+                   name="nombre"
+                   required="true"
+                   th:field="*{nombre}"/>
+            <br>
+            <label>PrimerApellido</label>
+            <input type="text"
+                   name="primerApellido"
+                   th:field="*{primerApellido}"/>
+            <br>
+            <label>SegundoApellido</label>
+            <input type="text"
+                   name="segundoApellido"
+                   th:field="*{segundoApellido}"/>
+            <br>
+            <label>Correo</label>
+            <input type="email"
+                   name="correo"
+                   required="true"
+                   th:field="*{correo}"/>
+            <br>
+            <label>Telefono</label>
+            <input type="tel"
+                   name="telefono"
+                   th:field="*{telefono}"/>
+            <br>
+            <label>Puesto</label>
+            <input type="text"
+                   name="puesto"
+                   th:field="*{puesto}"/>
+            <br>
+            <label>Antiguedad</label>
+            <input type="tel"
+                   name="antiguedad"
+                   th:field="*{antiguedad}"/>
+            <br>
+            <hr>
+            <input type="submit" value="Guardar" />
+            <hr>
+        </form>
+        <!--        <footer th:replace="layout/plantilla :: footer" />-->
+    </body>
+</html>
+
+
