@@ -1,6 +1,6 @@
-package com.project.BookGeekShop.clienteService;
+package com.project.BookGeekShop.service;
 
-import com.project.BookGeekShop.clienteDomain.Cliente;
+import com.project.BookGeekShop.domain.Cliente;
 import java.util.List;
 
 public interface ClienteService {

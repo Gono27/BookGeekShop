@@ -1,7 +1,7 @@
-package com.project.BookGeekShop.clienteController;
+package com.project.BookGeekShop.controller;
 
-import com.project.BookGeekShop.clienteDomain.Cliente;
-import com.project.BookGeekShop.clienteService.ClienteService;
+import com.project.BookGeekShop.domain.Cliente;
+import com.project.BookGeekShop.service.ClienteService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

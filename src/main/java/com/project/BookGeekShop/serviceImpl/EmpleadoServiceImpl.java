@@ -1,8 +1,8 @@
-package com.project.BookGeekShop.empleadoServiceImpl;
+package com.project.BookGeekShop.serviceImpl;
 
-import com.project.BookGeekShop.empleadoDao.EmpleadoDao;
-import com.project.BookGeekShop.empleadoDomain.Empleado;
-import com.project.BookGeekShop.empleadoService.EmpleadoService;
+import com.project.BookGeekShop.dao.EmpleadoDao;
+import com.project.BookGeekShop.domain.Empleado;
+import com.project.BookGeekShop.service.EmpleadoService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

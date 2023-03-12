@@ -1,6 +1,6 @@
-package com.project.BookGeekShop.clienteDao;
+package com.project.BookGeekShop.dao;
 
-import com.project.BookGeekShop.clienteDomain.Cliente;
+import com.project.BookGeekShop.domain.Cliente;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 

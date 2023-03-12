@@ -1,6 +1,6 @@
-package com.project.BookGeekShop.empleadoService;
+package com.project.BookGeekShop.service;
 
-import com.project.BookGeekShop.empleadoDomain.Empleado;
+import com.project.BookGeekShop.domain.Empleado;
 import java.util.List;
 
 public interface EmpleadoService {

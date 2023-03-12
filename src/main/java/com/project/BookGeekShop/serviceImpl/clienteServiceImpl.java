@@ -1,8 +1,8 @@
-package com.project.BookGeekShop.clienteServiceImpl;
+package com.project.BookGeekShop.serviceImpl;
 
-import com.project.BookGeekShop.clienteDao.ClienteDao;
-import com.project.BookGeekShop.clienteDomain.Cliente;
-import com.project.BookGeekShop.clienteService.ClienteService;
+import com.project.BookGeekShop.dao.ClienteDao;
+import com.project.BookGeekShop.domain.Cliente;
+import com.project.BookGeekShop.service.ClienteService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
