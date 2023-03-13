@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>BookGeekShop</title>
+        <meta charset="UTF-8"/>
+    </head>
+    <body>
+        <!--        <header th:replace="layout/plantilla :: header"/>-->
+        <header>
+            <h2>Listado de Libros</h2>
+            <br>
+            <a th:href="@{/}">Regresar a Home</a>
+            <hr>
+        </header>
+        <a th:href="@{/libro/nuevo}">Nuevo Libro</a>
+        <div th:if="${libros != null and !libros.empty}">
+            <table border="0">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Autor</th>
+                        <th>Editorial</th>
+                        <th>FechaPublicacion</th>
+                        <th>Cantidad</th>
+                        <th>Precio</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="libro: ${libros}">
+                        <td>[[${libro.nombre}]]</td>
+                        <td>[[${libro.autor}]]</td>
+                        <td>[[${libro.editorial}]]</td>
+                        <td>[[${libro.fechaPublicacion}]]</td>
+                        <td>[[${libro.cantidad}]]</td>
+                        <td>[[${libro.precio}]]</td>
+                        <td>
+                            <a th:href="@{/libro/eliminar/} + ${libro.idLibro}">Eliminar</a>
+                            <a th:href="@{/libro/modificar/} + ${libro.idLibro}">Modificar</a>
+                        </td>    
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <br>
+        <div th:if="${libros == null or libros.empty}">
+            <h2>No tenemos libros que mostrar</h2>
+        </div>  
+    </body>
+</html>
