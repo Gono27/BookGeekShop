@@ -4,22 +4,21 @@
     <head th:fragment="head">
         <title>BookGeekShop</title>
         <meta charset="UTF-8"/>
-        <link href="/css/estilos.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
         <header th:fragment="header">
-            <nav class="nav">
-                <a href="index.html" class="nav_a">BookGeekShop</a>
-                <form role="search" class="nav_form">
-                    <input type="search" placeholder="Buscar" aria-label="Search" class="nav_a_input">
-                    <button type="submit" class="nav_buscar">Buscar</button>
+            <nav style="display: flex;justify-content: space-between; margin: 0 auto;">
+                <a href="index.html" style="text-decoration: none; font-size: 30px;font-weight: bold;padding: 0 40px;line-height: 80px; color: black;">BookGeekShop</a>
+                <form role="search" style="padding: 0 40px;line-height: 80px;">
+                    <input type="search" placeholder="Buscar" aria-label="Search" style="padding: 0 50px;">
+                    <button type="submit" style="margin-right: 300px;">Buscar</button>
                     <button type="submit">Perfil</button>
                     <button type="submit">Carrito</button>
                 </form>
             </nav>
             <hr>
         </header>
-        <aside th:fragment="aside" class="lateral">
+        <aside th:fragment="aside" style="position: fixed;top: 97px;left: 0;width: 10%;bottom: 20px;background-color: whitesmoke;">
             <button type="submit"><a th:href="@{/cliente/listado_cliente}">Clientes</a></button>
             <button type="submit"><a th:href="@{/empleado/listado_empleado}">Empleados</a></button>
             <button type="submit"><a th:href="@{/libro/listado_libro}">Libros</a></button>
