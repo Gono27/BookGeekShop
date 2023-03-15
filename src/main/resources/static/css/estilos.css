@@ -1,0 +1,41 @@
+*{
+
+}
+.nav{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    background-color: whitesmoke; 
+}
+.nav_a{
+    text-decoration: none;
+    font-size: 30px;
+    font-weight: bold;
+    padding: 0 40px;
+    line-height: 80px;
+    color: black;
+}
+.nav_form{
+    padding: 0 40px;
+    line-height: 80px;
+}
+.nav_a_input{
+    padding: 0 50px;
+}
+.nav_buscar{
+    margin-right: 300px;
+}
+.lateral{
+    position: fixed;
+    top: 97px;
+    left: 0;
+    width: 10%;
+    bottom: 20px;
+    background-color: whitesmoke;
+}
+button{
+    background-color: white;
+    border-radius: 5px;
+    border-color: transparent;
+   
+}
