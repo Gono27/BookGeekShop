@@ -26,7 +26,7 @@ public class NovelaGraficaController {
     }
     
     @GetMapping("/nuevo")
-    public String novelaGraficaNuevo (NovelaGrafica novelaGrafica){
+    public String novelaGraficaNueva (NovelaGrafica novelaGrafica){
         return "/novelaGrafica/modifica_novelaGrafica";
     }
 

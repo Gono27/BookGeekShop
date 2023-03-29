@@ -13,8 +13,8 @@ public class Cliente implements Serializable{
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="id_cliente")
     private long idCliente;
-    
     private String nombre;
     private String primerApellido;
     private String segundoApellido;
@@ -24,14 +24,14 @@ public class Cliente implements Serializable{
     public Cliente() {
     }
 
-    public Cliente(long idCliente, String nombre, String primerApellido, String segundoApellido, String correo, String telefono) {
-        this.idCliente = idCliente;
+    public Cliente(String nombre, String primerApellido, String segundoApellido, String correo, String telefono) {
         this.nombre = nombre;
         this.primerApellido = primerApellido;
         this.segundoApellido = segundoApellido;
         this.correo = correo;
         this.telefono = telefono;
     }
+
     
     
 }

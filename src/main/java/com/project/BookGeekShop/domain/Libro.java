@@ -13,8 +13,8 @@ public class Libro implements Serializable {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="id_libro")
     private long idLibro;
-    
     private String nombre;
     private String autor;
     private String editorial;
@@ -25,8 +25,7 @@ public class Libro implements Serializable {
     public Libro() {
     }
 
-    public Libro(long idLibro, String nombre, String autor, String editorial, String fechaPublicacion, int cantidad, double precio) {
-        this.idLibro = idLibro;
+    public Libro(String nombre, String autor, String editorial, String fechaPublicacion, int cantidad, double precio) {
         this.nombre = nombre;
         this.autor = autor;
         this.editorial = editorial;
@@ -34,6 +33,6 @@ public class Libro implements Serializable {
         this.cantidad = cantidad;
         this.precio = precio;
     }
-    
+
     
 }

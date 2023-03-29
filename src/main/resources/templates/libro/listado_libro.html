@@ -17,6 +17,7 @@
             <table border="0">
                 <thead>
                     <tr>
+                        <th>#</th>
                         <th>Nombre</th>
                         <th>Autor</th>
                         <th>Editorial</th>
@@ -26,7 +27,8 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr th:each="libro: ${libros}">
+                    <tr th:each="libro, contador: ${libros}">
+                        <td>[[${contador.count}]]</td>
                         <td>[[${libro.nombre}]]</td>
                         <td>[[${libro.autor}]]</td>
                         <td>[[${libro.editorial}]]</td>
