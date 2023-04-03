@@ -4,6 +4,11 @@
     <head th:fragment="head">
         <title>BookGeekShop</title>
         <meta charset="UTF-8"/>
+        <link th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" rel="stylesheet"/>
+        <link th:href="@{/webjars/font-awesome/css/all.css}" rel="stylesheet"/>
+        <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+        <script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
+        <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
         <link href="/css/estilos.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
@@ -26,6 +31,7 @@
             <button type="submit"><a th:href="@{/novelaGrafica/listado_novelaGrafica}">Novelas Graficas</a></button>
             <button type="submit"><a th:href="@{/ventaLibro/listado_ventaLibro}"> Ventas de Libros</a></button>
             <button type="submit"><a th:href="@{/ventaNovelaGrafica/listado_ventaNovelaGrafica}">Ventas de Novelas Graficas</a></button>
+            <button type="submit"><a th:href="@{/sobreNosotros/sobre_nosotros}">Sobre Nosotros</a></button>
         </aside>
         
     </body>
