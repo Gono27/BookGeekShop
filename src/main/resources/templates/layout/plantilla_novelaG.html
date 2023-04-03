@@ -25,19 +25,15 @@
             <hr>
         </header>
         <aside th:fragment="aside" class="lateral">
-            <button type="submit"><a th:href="@{/cliente/listado_cliente}">Clientes</a></button>
-            <button type="submit"><a th:href="@{/empleado/listado_empleado}">Empleados</a></button>
-            <button type="submit"><a th:href="@{/libro/listado_libro}">Libros</a></button>
-            <button type="submit"><a th:href="@{/novelaGrafica/listado_novelaGrafica}">Novelas Graficas</a></button>
-            <button type="submit"><a th:href="@{/ventaLibro/listado_ventaLibro}"> Ventas de Libros</a></button>
-            <button type="submit"><a th:href="@{/ventaNovelaGrafica/listado_ventaNovelaGrafica}">Ventas de Novelas Graficas</a></button>
-            <label>Categorias</label>
+           <label>Categorias</label>
             <br>
-            <button type="submit" style="text-align: center"><a th:href="@{/categorias/libros/CategoriasLibros}">Libros</a></button>
-            <button type="submit"><a th:href="@{/categorias/novelasGraficas/CategoriasNovelasGraficas}">Novelas Graficas</a></button>
-            <hr>
-            <button type="submit"><a th:href="@{/sobreNosotros/sobre_nosotros}">Sobre Nosotros</a></button>
+            <button type="submit"><a th:href="@{/categorias/novelasGraficas/Accion}">Accion</a></button>
+            <br>
+            <button type="submit"><a th:href="@{/categorias/novelasGraficas/CienciaFiccion}">Ciencia Ficcion</a></button>
+            <br>
+            <button type="submit"><a th:href="@{/categorias/novelasGraficas/Politica}">Politica</a></button>
+            <br>
+            <button type="submit"><a th:href="@{/categorias/novelasGraficas/Aventura}">Aventura</a></button>
         </aside>
-        
     </body>
 </html>
