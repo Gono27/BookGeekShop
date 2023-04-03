@@ -14,7 +14,7 @@
     <body>
         <header th:fragment="header">
             <nav class="nav">
-                <a href="index.html" class="nav_a">BookGeekShop</a>
+                <a th:href="@{/}" class="nav_a">BookGeekShop</a>
                 <form role="search" class="nav_form">
                     <input type="search" placeholder="Buscar" aria-label="Search" class="nav_a_input">
                     <button type="submit" class="nav_buscar">Buscar</button>
@@ -22,7 +22,6 @@
                     <button type="submit">Carrito</button>
                 </form>
             </nav>
-            <hr>
         </header>
         <aside th:fragment="aside" class="lateral">
             <button type="submit"><a th:href="@{/cliente/listado_cliente}">Clientes</a></button>
