@@ -9,12 +9,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @Slf4j
-@RequestMapping("/sobreNosotros")
-public class SobreNosotrosController {
+@RequestMapping("/contacto")
+public class ContactoController {
     
-    @GetMapping("/sobre_nosotros")
+    @GetMapping("/contacto")
     public String inicio(Model model) {
-        return "/sobreNosotros/sobre_nosotros";      
+        return "/contacto/contacto";      
     }
     
 }
