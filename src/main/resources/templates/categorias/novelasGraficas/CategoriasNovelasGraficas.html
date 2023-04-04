@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html xmlns="https://www.w3.org/1999/xhtml"
+      xmlns:th="https://www.thymeleaf.org">
+    <head th:replace="~{layout/plantilla_novelaG :: head}"/>
+    <body>
+        <header th:replace="~{layout/plantilla_novelaG :: header}"/>
+        <aside th:replace="~{layout/plantilla_novelaG :: aside}"/>  
+        <h1 style="text-align: center;">Novelas Graficas</h1>
+
+        <div style="position: fixed;top: 150px;left: 10%;right: 0;">
+            <section>
+                <h2>Lo más leido</h2>
+                <div class="container">           
+                    <div class="row row-cols-3">               
+                        <div class="card" th:each="novelaGrafica : ${novelasGraficas}">                   
+                            <div class="card-body">                                              
+                                <h5 class="card-title">[[${novelaGrafica.nombre}]]</h5>  
+                                <h6 class="card-subtitle mb-2 text-muted text-end">Precio: [[${novelaGrafica.precio}]] Colones</h6>        
+                                <p class="card-text">   
+                                    Tipo: [[${novelaGrafica.tipo}]]
+                                    <br>
+                                    Autor: [[${novelaGrafica.autor}]]
+                                    <br>
+                                    Editorial: [[${novelaGrafica.editorial}]]
+                                    <br>
+                                    Fecha de Publicación:[[${novelaGrafica.fechaPublicacion}]]</p>
+                                 <a class="card-link" th:href="@{/carrito/comprar/} + ${novelaGrafica.idNovelaG}">Comprar</a>  
+                            </div>           
+                        </div>         
+                    </div>        
+                </div> 
+            </section>
+            <section>
+                <h2>Lo nuevo</h2>
+            </section>
+        </div>
+    </body>
+</html>
