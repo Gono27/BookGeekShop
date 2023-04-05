@@ -1,8 +1,4 @@
 <!DOCTYPE html>
-<!--
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
--->
 <html>
     <head>
         <title>TODO supply a title</title>
@@ -21,6 +17,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
             <table border="0">
                 <thead>
                     <tr>
+                        <th>#</th>
                         <th>Nombre</th>
                         <th>PrimerApellido</th>
                         <th>SegundoApellido</th>
@@ -31,7 +28,8 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                     </tr>
                 </thead>
                 <tbody>
-                    <tr th:each="empleado: ${empleados}">
+                    <tr th:each="empleado, contador: ${empleados}">
+                        <td>[[${contador.count}]]</td>
                         <td>[[${empleado.nombre}]]</td>
                         <td>[[${empleado.primerApellido}]]</td>
                         <td>[[${empleado.segundoApellido}]]</td>

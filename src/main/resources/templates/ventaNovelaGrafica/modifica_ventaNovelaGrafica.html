@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>BookGeekShop</title>
+        <meta charset="UTF-8"/>
+    </head>
+    <body>
+        <!--        <header th:replace="layout/plantilla :: header"/>-->
+        <header>        
+            <h2>Datos de Libro</h2>
+            <hr>
+        </header>
+        <a th:href="@{/ventaNovelaGrafica/listado_ventaNovelaGrafica}">Regresar</a>
+        <hr>
+        <form th:action="@{/ventaNovelaGrafica/guardar}" 
+              method="post"
+              th:object="${ventaNovelaGrafica}">
+            <input type="hidden" name="idVentaNG" 
+                   th:field="*{idVentaNG}"/>
+            <label>Detalle</label>
+            <input type="text"
+                   name="detalle"
+                   required="true"
+                   th:field="*{novelaGrafica}"/>
+            <br>
+            <label>Cliente</label>
+            <input type="text"
+                   name="cliente"
+                   required="true"
+                   th:field="*{cliente}"/>
+            <br>
+            <label>Total</label>
+            <input type="number"
+                   name="total"
+                   required="true"
+                   th:field="*{total}"/>
+            <br>
+            <hr>
+            <input type="submit" value="Guardar" />
+            <hr>
+        </form>
+        <!--        <footer th:replace="layout/plantilla :: footer" />-->
+    </body>
+</html>
+
+

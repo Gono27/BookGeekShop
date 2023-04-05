@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html xmlns:th="https://www.thymeleaf.org">
+    <head th:fragment="head">
+        <title>BookGeekShop</title>
+        <meta charset="UTF-8"/>
+        <link th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" rel="stylesheet"/>
+        <link th:href="@{/webjars/font-awesome/css/all.css}" rel="stylesheet"/>
+        <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+        <script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
+        <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+        <link href="/css/estilos.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <header th:fragment="header">
+            <nav class="nav">
+                <a href="index.html" class="nav_a">BookGeekShop</a>
+                <form role="search" class="nav_form">
+                    <input type="search" placeholder="Buscar" aria-label="Search" class="nav_a_input">
+                    <button type="submit" class="nav_buscar">Buscar</button>
+                    <button type="submit">Perfil</button>
+                    <button type="submit">Carrito</button>
+                </form>
+            </nav>
+            <hr>
+        </header>
+        <aside th:fragment="aside" class="lateral">
+           <label>Categorias</label>
+            <br>
+            <button type="submit"><a th:href="@{/categorias/novelasGraficas/Accion}">Accion</a></button>
+            <br>
+            <button type="submit"><a th:href="@{/categorias/novelasGraficas/CienciaFiccion}">Ciencia Ficcion</a></button>
+            <br>
+            <button type="submit"><a th:href="@{/categorias/novelasGraficas/Politica}">Politica</a></button>
+            <br>
+            <button type="submit"><a th:href="@{/categorias/novelasGraficas/Aventura}">Aventura</a></button>
+        </aside>
+    </body>
+</html>

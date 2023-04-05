@@ -17,6 +17,7 @@
             <table border="0">
                 <thead>
                     <tr>
+                        <th>#</th>
                         <th>Nombre</th>
                         <th>Tipo</th>
                         <th>Autor</th>
@@ -27,7 +28,8 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr th:each="novelaGrafica: ${novelaGraficas}">
+                    <tr th:each="novelaGrafica, contador: ${novelaGraficas}">
+                        <td>[[${contador.count}]]</td>
                         <td>[[${novelaGrafica.nombre}]]</td>
                         <td>[[${novelaGrafica.tipo}]]</td>
                         <td>[[${novelaGrafica.autor}]]</td>

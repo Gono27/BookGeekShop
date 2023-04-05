@@ -13,8 +13,8 @@ public class NovelaGrafica implements Serializable {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="id_novelaG")
     private long idNovelaG;
-    
     private String nombre;
     private String tipo;
     private String autor;
@@ -26,8 +26,7 @@ public class NovelaGrafica implements Serializable {
     public NovelaGrafica() {
     }
 
-    public NovelaGrafica(long idNovelaG, String nombre, String tipo, String autor, String editorial, String fechaPublicacion, int cantidad, double precio) {
-        this.idNovelaG = idNovelaG;
+    public NovelaGrafica(String nombre, String tipo, String autor, String editorial, String fechaPublicacion, int cantidad, double precio) {
         this.nombre = nombre;
         this.tipo = tipo;
         this.autor = autor;
@@ -36,6 +35,7 @@ public class NovelaGrafica implements Serializable {
         this.cantidad = cantidad;
         this.precio = precio;
     }
+
     
     
 }

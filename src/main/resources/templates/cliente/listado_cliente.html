@@ -17,6 +17,7 @@
             <table border="0">
                 <thead>
                     <tr>
+                        <th>#</th>
                         <th>Nombre</th>
                         <th>PrimerApellido</th>
                         <th>SegundoApellido</th>
@@ -25,7 +26,8 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr th:each="cliente: ${clientes}">
+                    <tr th:each="cliente, contador: ${clientes}">
+                         <td>[[${contador.count}]]</td>
                         <td>[[${cliente.nombre}]]</td>
                         <td>[[${cliente.primerApellido}]]</td>
                         <td>[[${cliente.segundoApellido}]]</td>
