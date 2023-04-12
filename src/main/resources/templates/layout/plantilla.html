@@ -4,7 +4,11 @@
     <head th:fragment="head">
         <title>BookGeekShop</title>
         <meta charset="UTF-8"/>
-        <link href="/css/estilos.css" rel="stylesheet" type="text/css"/>
+        <link th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" rel="stylesheet"/>
+        <link th:href="@{/webjars/font-awesome/css/all.css}" rel="stylesheet"/>
+        <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+        <script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
+        <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
     </head>
     <body>
         <header th:fragment="header">
@@ -20,13 +24,26 @@
             <hr>
         </header>
         <aside th:fragment="aside" class="lateral">
+            <label style="text-align: center">Administrativo</label>
+            <br>
             <button type="submit"><a th:href="@{/cliente/listado_cliente}">Clientes</a></button>
             <button type="submit"><a th:href="@{/empleado/listado_empleado}">Empleados</a></button>
+            <hr>
+            <label>Articulos</label>
+            <br>
             <button type="submit"><a th:href="@{/libro/listado_libro}">Libros</a></button>
             <button type="submit"><a th:href="@{/novelaGrafica/listado_novelaGrafica}">Novelas Graficas</a></button>
-            <button type="submit"><a th:href="@{/ventaLibro/listado_ventaLibro}"> Ventas de Libros</a></button>
+            <hr>
+            <label>Ventas</label>
+            <br>
+            <button type="submit"><a th:href="@{/ventaLibro/listado_ventaLibro}">Ventas de Libros</a></button>
             <button type="submit"><a th:href="@{/ventaNovelaGrafica/listado_ventaNovelaGrafica}">Ventas de Novelas Graficas</a></button>
+            <hr>
+            <label>Categorias</label>
+            <br>
+            <button type="submit"><a th:href="@{/categorias/libros/CategoriasLibros}">Libros</a></button>
+            <button type="submit"><a th:href="@{/categorias/novelasGraficas/CategoriasNovelasGraficas}">Novelas Graficas</a></button>
         </aside>
-        
+
     </body>
 </html>
