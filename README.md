@@ -1,6 +1,6 @@
 # BookGeekShop
 
-##Proyecto Desarrollo Web y Patrones: BookGeekShop Grupo1|
+Proyecto Desarrollo Web y Patrones: BookGeekShop Grupo1
 
 Adrián Peraza Baldizán
 Justin Meneses Lucas
