@@ -36,8 +36,8 @@
                         <td>[[${libro.cantidad}]]</td>
                         <td>[[${libro.precio}]]</td>
                         <td>
-                            <a th:href="@{/libro/eliminar/} + ${libro.idLibro}">Eliminar</a>
-                            <a th:href="@{/libro/modificar/} + ${libro.idLibro}">Modificar</a>
+                            <a th:href="@{/libro/eliminar/} + ${libro.idLibro}" sec:authorize="hasRole('ROLE_ADMIN')">Eliminar</a>
+                            <a th:href="@{/libro/modificar/} + ${libro.idLibro}" sec:authorize="hasRole('ROLE_ADMIN')">Modificar</a>
                         </td>    
                     </tr>
                 </tbody>

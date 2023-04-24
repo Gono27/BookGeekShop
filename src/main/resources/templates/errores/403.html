@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://wwww.thymeleaf.org">
+    <head>
+        <title>BookGeekShop</title>
+        <meta charset="UTF-8"/>
+        <style>
+            .contenido {
+                text-align: center; border-radius: 20px;
+                top:50%; left: 50%; margin-left: -250px; margin-top: -75px;
+                width: 500px; height: 150px;
+                background-color: red;
+                position: fixed;                
+                overflow: auto;
+            }
+        </style>
+    </head>
+    <body>       
+        <div class="contenido">
+            <h2>Error</h2>
+            <p>No tiene acceso a este apartado</p>
+            <a th:href="@{/}">Regresar</a>
+        </div>        
+    </body>
+</html>

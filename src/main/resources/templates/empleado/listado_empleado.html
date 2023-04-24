@@ -38,8 +38,8 @@
                         <td>[[${empleado.puesto}]]</td>
                         <td>[[${empleado.antiguedad}]]</td>
                         <td>
-                            <a th:href="@{/empleado/eliminar/} + ${empleado.idEmpleado}">Eliminar</a>
-                            <a th:href="@{/empleado/modificar/} + ${empleado.idEmpleado}">Modificar</a>
+                            <a th:href="@{/empleado/eliminar/} + ${empleado.idEmpleado}" sec:authorize="hasRole('ROLE_ADMIN')">Eliminar</a>
+                            <a th:href="@{/empleado/modificar/} + ${empleado.idEmpleado}" sec:authorize="hasRole('ROLE_ADMIN')">Modificar</a>
                         </td>    
                     </tr>
                 </tbody>

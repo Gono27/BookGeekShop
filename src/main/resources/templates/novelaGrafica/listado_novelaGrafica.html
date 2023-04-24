@@ -38,8 +38,8 @@
                         <td>[[${novelaGrafica.cantidad}]]</td>
                         <td>[[${novelaGrafica.precio}]]</td>
                         <td>
-                            <a th:href="@{/novelaGrafica/eliminar/} + ${novelaGrafica.idNovelaG}">Eliminar</a>
-                            <a th:href="@{/novelaGrafica/modificar/} + ${novelaGrafica.idNovelaG}">Modificar</a>
+                            <a th:href="@{/novelaGrafica/eliminar/} + ${novelaGrafica.idNovelaG}"  sec:authorize="hasRole('ROLE_ADMIN')">Eliminar</a>
+                            <a th:href="@{/novelaGrafica/modificar/} + ${novelaGrafica.idNovelaG}" sec:authorize="hasRole('ROLE_ADMIN')">Modificar</a>
                         </td>    
                     </tr>
                 </tbody>

@@ -30,8 +30,8 @@
                         <td>[[${ventaNovelaGrafica.cliente.nombre}]]</td>
                         <td>[[${ventaNovelaGrafica.total}]]</td>
                         <td>
-                            <a th:href="@{/ventaNovelaGrafica/eliminar/} + ${ventaNovelaGrafica.idVentaNG}">Eliminar</a>
-                            <a th:href="@{/ventaNovelaGrafica/modificar/} + ${ventaNovelaGrafica.idVentaNG}">Modificar</a>
+                            <a th:href="@{/ventaNovelaGrafica/eliminar/} + ${ventaNovelaGrafica.idVentaNG}" sec:authorize="hasRole('ROLE_ADMIN')">Eliminar</a>
+                            <a th:href="@{/ventaNovelaGrafica/modificar/} + ${ventaNovelaGrafica.idVentaNG}" sec:authorize="hasRole('ROLE_ADMIN')">Modificar</a>
                         </td>    
                     </tr>
                 </tbody>
