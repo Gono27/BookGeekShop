@@ -56,7 +56,7 @@ public class SecurityConfig {
                         "/cliente/modifica_cliente/**",
                         "/cliente/modificar/**",
                         "/cliente/eliminar/**",
-                        "/cliente/nuevo/**", 
+                        "/cliente/nuevo/**",
                         "/empleado/listado_empleado/**",
                         "/empleado/modifica_empleado/**",
                         "/empleado/modificar/**",
@@ -71,13 +71,19 @@ public class SecurityConfig {
                         "/libro/modifica_libro/**",
                         "/libro/modificar/**",
                         "/libro/eliminar/**",
-                        "/libro/nuevo/**"
+                        "/libro/nuevo/**",
+                        "/novelasGraficas/CategoriasNovelasGraficas/**",
+                        "/categorias/novelasGraficas/CategoriasNovelasGraficas/**",
+                        "/libro/nuevo/**",
+                        "/ventaLibro/listado_ventaLibro/**",
+                        "/ventaNovelaGrafica/listado_ventaNovelaGrafica/**",
+                        "/categorias/libros/**"
                 ).hasRole("ADMIN")
                 .requestMatchers(
                         "/cliente/listado_cliente/**",
                         "/empleado/listado_empleado/**",
-                       "/novelaGrafica/listado_novelaGrafica/**",
-                    "/libro/listado_libro/**"
+                        "/novelaGrafica/listado_novelaGrafica/**",
+                        "/libro/listado_libro/**"
                 ).hasAnyRole("ADMIN", "VENDEDOR"))
                 .formLogin((form) -> form
                 .loginPage("/login").permitAll())
