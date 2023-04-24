@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>BookGeekShop</title>
+        <meta charset="UTF-8"/>
+    </head>
+    <body>
+        <!--        <header th:replace="layout/plantilla :: header"/>-->
+        <header>
+            <h2>Listado de Ventas de Novelas Graficas</h2>
+            <br>
+            <a th:href="@{/}">Regresar a Home</a>
+            <hr>
+        </header>
+        <a th:href="@{/ventaNovelaGrafica/nuevo}">Nueva Venta de Novela Grafica</a>
+        <div th:if="${ventaNovelaGraficas != null and !ventaNovelaGraficas.empty}">
+            <table border="0">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Detalle</th>
+                        <th>Cliente</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="ventaNovelaGrafica, contador: ${ventaNovelaGraficas}">
+                        <td>[[${contador.count}]]</td>
+                        <td>[[${ventaNovelaGrafica.novelaGrafica.nombre}]]</td>
+                        <td>[[${ventaNovelaGrafica.cliente.nombre}]]</td>
+                        <td>[[${ventaNovelaGrafica.total}]]</td>
+                        <td>
+                            <a th:href="@{/ventaNovelaGrafica/eliminar/} + ${ventaNovelaGrafica.idVentaNG}">Eliminar</a>
+                            <a th:href="@{/ventaNovelaGrafica/modificar/} + ${ventaNovelaGrafica.idVentaNG}">Modificar</a>
+                        </td>    
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <br>
+        <div th:if="${ventaNovelaGraficas == null or ventaNovelaGraficas.empty}">
+            <h2>No tenemos ventas de novela graficas que mostrar</h2>
+        </div>  
+    </body>
+</html>

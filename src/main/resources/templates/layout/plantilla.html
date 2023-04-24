@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml"
+      xmlns:th="https://www.thymeleaf.org">
+    <head th:fragment="head">
+        <title>BookGeekShop</title>
+        <meta charset="UTF-8"/>
+        <link th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" rel="stylesheet"/>
+        <link th:href="@{/webjars/font-awesome/css/all.css}" rel="stylesheet"/>
+        <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+        <script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
+        <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+        <link href="/css/estilos.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <header th:fragment="header">
+            <nav class="nav">
+                <a th:href="@{/}" class="nav_a">BookGeekShop</a>
+                <form role="search" class="nav_form">
+                    <input type="search" placeholder="Buscar" aria-label="Search" class="nav_a_input">
+                    <button type="submit" class="nav_buscar">Buscar</button>
+                    <button type="submit">Perfil</button>
+                    <button type="submit">Carrito</button>
+                </form>
+            </nav>
+        </header>
+        <aside th:fragment="aside" class="lateral">
+            <button type="submit"><a th:href="@{/cliente/listado_cliente}">Clientes </a></button>
+            <button type="submit"><a th:href="@{/empleado/listado_empleado}">Empleados</a></button>
+            <button type="submit"><a th:href="@{/libro/listado_libro}">Libros</a></button>
+            <button type="submit"><a th:href="@{/novelaGrafica/listado_novelaGrafica}">Novelas Graficas</a></button>
+            <button type="submit"><a th:href="@{/ventaLibro/listado_ventaLibro}"> Ventas de Libros</a></button>
+            <button type="submit"><a th:href="@{/ventaNovelaGrafica/listado_ventaNovelaGrafica}">Ventas de Novelas Graficas</a></button>
+            <label>Categorias</label>
+            <br>
+            <button type="submit" style="text-align: center"><a th:href="@{/categorias/libros/CategoriasLibros}">Libros</a></button>
+            <button type="submit"><a th:href="@{/categorias/novelasGraficas/CategoriasNovelasGraficas}">Novelas Graficas</a></button>
+            <hr>
+            <button type="submit"> <a th:href="@{/sobreNosotros/sobre_nosotros}">Sobre Nosotros</a> </button>
+            <button type="submit"><a th:href="@{/contacto/contacto}">Contacto</a></button>
+        </aside>
+
+    </body>
+</html>

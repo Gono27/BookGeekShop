@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>BookGeekShop</title>
+        <meta charset="UTF-8"/>
+    </head>
+    <body>
+        <!--        <header th:replace="layout/plantilla :: header"/>-->
+        <header>
+            <h2>Listado de Novelas Graficas</h2>
+            <br>
+            <a th:href="@{/}">Regresar a Home</a>
+            <hr>
+        </header>
+        <a th:href="@{/novelaGrafica/nuevo}">Nueva NovelaGrafica</a>
+        <div th:if="${novelaGraficas != null and !novelaGraficas.empty}">
+            <table border="0">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Nombre</th>
+                        <th>Tipo</th>
+                        <th>Autor</th>
+                        <th>Editorial</th>
+                        <th>FechaPublicacion</th>
+                        <th>Cantidad</th>
+                        <th>Precio</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="novelaGrafica, contador: ${novelaGraficas}">
+                        <td>[[${contador.count}]]</td>
+                        <td>[[${novelaGrafica.nombre}]]</td>
+                        <td>[[${novelaGrafica.tipo}]]</td>
+                        <td>[[${novelaGrafica.autor}]]</td>
+                        <td>[[${novelaGrafica.editorial}]]</td>
+                        <td>[[${novelaGrafica.fechaPublicacion}]]</td>
+                        <td>[[${novelaGrafica.cantidad}]]</td>
+                        <td>[[${novelaGrafica.precio}]]</td>
+                        <td>
+                            <a th:href="@{/novelaGrafica/eliminar/} + ${novelaGrafica.idNovelaG}">Eliminar</a>
+                            <a th:href="@{/novelaGrafica/modificar/} + ${novelaGrafica.idNovelaG}">Modificar</a>
+                        </td>    
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <br>
+        <div th:if="${novelaGraficas == null or novelaGraficas.empty}">
+            <h2>No tenemos Novelas Graficas que mostrar</h2>
+        </div>  
+    </body>
+</html>

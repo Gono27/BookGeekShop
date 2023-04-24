@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html xmlns="https://www.w3.org/1999/xhtml"
+      xmlns:th="https://www.thymeleaf.org">
+    <head th:replace="~{layout/plantilla_libro :: head}"/>
+    <body>
+        <header th:replace="~{layout/plantilla_libro :: header}"/>
+        <aside th:replace="~{layout/plantilla_libro :: aside}"/>
+        <h1 style="text-align: center;">Libros</h1>
+        <div style="position: fixed;top: 150px;left: 10%;right: 0;">
+            <section>
+                <h2>Lo más leido</h2>
+                <div class="container">           
+                    <div class="row row-cols-3">               
+                        <div class="card" th:each="libro : ${libros}">                   
+                            <div class="card-body">                                              
+                                <h5 class="card-title">[[${libro.nombre}]]</h5>  
+                                <h6 class="card-subtitle mb-2 text-muted text-end">Precio: [[${libro.precio}]] Colones</h6>         
+                                <p class="card-text">                      
+                                    Autor: [[${libro.autor}]]
+                                    <br>
+                                    Editorial: [[${libro.editorial}]]
+                                    <br>
+                                    Fecha de Publicación: [[${libro.fechaPublicacion}]]</p>
+                                <a class="card-link" th:href="@{/carrito/comprar/} + ${libro.idLibro}">Comprar</a> 
+                            </div>           
+                        </div>         
+                    </div>        
+                </div> 
+            </section>
+            <section>
+                <h2>Lo nuevo</h2>
+            </section>
+        </div>
+    </body>
+</html>

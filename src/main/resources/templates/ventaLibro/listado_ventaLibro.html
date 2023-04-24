@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>BookGeekShop</title>
+        <meta charset="UTF-8"/>
+    </head>
+    <body>
+        <!--        <header th:replace="layout/plantilla :: header"/>-->
+        <header>
+            <h2>Listado de Ventas de Libros</h2>
+            <br>
+            <a th:href="@{/}">Regresar a Home</a>
+            <hr>
+        </header>
+        <a th:href="@{/ventaLibro/nuevo}">Nueva Venta de Libro</a>
+        <div th:if="${ventaLibros != null and !ventaLibros.empty}">
+            <table border="0">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Detalle</th>
+                        <th>Cliente</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="ventaLibro, contador: ${ventaLibros}">
+                        <td>[[${contador.count}]]</td>
+                        <td>[[${ventaLibro.libro.nombre}]]</td>
+                        <td>[[${ventaLibro.cliente.nombre}]]</td>
+                        <td>[[${ventaLibro.total}]]</td>
+                        <td>
+                            <a th:href="@{/ventaLibro/eliminar/} + ${ventaLibro.idVentaL}">Eliminar</a>
+                            <a th:href="@{/ventaLibro/modificar/} + ${ventaLibro.idVentaL}">Modificar</a>
+                        </td>    
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <br>
+        <div th:if="${ventaLibros == null or ventaLibros.empty}">
+            <h2>No tenemos ventas de libros que mostrar</h2>
+        </div>  
+    </body>
+</html>

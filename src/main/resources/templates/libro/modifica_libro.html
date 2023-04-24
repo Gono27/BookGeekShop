@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>BookGeekShop</title>
+        <meta charset="UTF-8"/>
+    </head>
+    <body>
+        <!--        <header th:replace="layout/plantilla :: header"/>-->
+        <header>        
+            <h2>Datos de Libro</h2>
+            <hr>
+        </header>
+        <a th:href="@{/libro/listado_libro}">Regresar</a>
+        <hr>
+        <form th:action="@{/libro/guardar}" 
+              method="post"
+              th:object="${libro}">
+            <input type="hidden" name="idLibro" 
+                   th:field="*{idLibro}"/>
+            <label>Nombre</label>
+            <input type="text"
+                   name="nombre"
+                   required="true"
+                   th:field="*{nombre}"/>
+            <br>
+            <label>Autor</label>
+            <input type="text"
+                   name="autor"
+                   required="true"
+                   th:field="*{autor}"/>
+            <br>
+            <label>Editorial</label>
+            <input type="text"
+                   name="editorial"
+                   required="true"
+                   th:field="*{editorial}"/>
+            <br>
+            <label>FechaPublicacion</label>
+            <input type="date"
+                   name="fechaPublicacion"
+                   required="true"
+                   th:field="*{fechaPublicacion}"/>
+            <br>
+            <label>Cantidad</label>
+            <input type="number"
+                   name="cantidad"
+                   th:field="*{cantidad}"/>
+            <br>
+            <label>Precio</label>
+            <input type="number"
+                   name="precio"
+                   th:field="*{precio}"/>
+            <br>
+            <hr>
+            <input type="submit" value="Guardar" />
+            <hr>
+        </form>
+        <!--        <footer th:replace="layout/plantilla :: footer" />-->
+    </body>
+</html>
+
+
